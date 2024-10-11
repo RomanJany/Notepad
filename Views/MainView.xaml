@@ -6,7 +6,51 @@
              xmlns:local="clr-namespace:Notepad.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="LightGray">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="File">
+                <MenuItem Header="New file" />
+                <MenuItem Header="New window" />
+                <MenuItem Header="Open" />
+                <MenuItem Header="Save" />
+                <MenuItem Header="Save as" />
+                <MenuItem Header="Print" />
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo" />
+                <MenuItem Header="Cut" />
+                <MenuItem Header="Copy" />
+                <MenuItem Header="Paste" />
+                <MenuItem Header="Delete" />
+                <MenuItem Header="Find" />
+                <MenuItem Header="Replace" />
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="Font" />
+                <MenuItem Header="Font size" />
+            </MenuItem>
+            <MenuItem Header="Settings" HorizontalAlignment="Right">
+
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom" Background="LightGray">
+            <StatusBarItem></StatusBarItem>
+        </StatusBar>
+        <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Undo" />
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                    <MenuItem Header="Delete" />
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+    </DockPanel>
 </UserControl>
