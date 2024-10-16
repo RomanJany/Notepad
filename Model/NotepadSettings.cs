@@ -54,5 +54,7 @@ namespace Notepad.Model
             }
         }
 
+        public string Path { get; private set; }
+
     }
 }
