@@ -9,6 +9,28 @@ namespace Notepad.Model
 {
     public class NotepadSettings
     {
+        public NotepadSettings(string path) 
+        {
+            Path = path;
+            try 
+            {
+                Open();
+            }
+            catch
+            {
+                // Default values
+                Theme = NotepadTheme.Light;
+                FontSize = 12;
+                Font = new FontFamily("Segoe UI");
+
+                try
+                {
+                    Save();
+                }
+                catch { }
+            }
+        }
+
         private void Open()
         {
             throw new NotImplementedException();
