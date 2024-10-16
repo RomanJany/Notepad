@@ -35,7 +35,14 @@ namespace Notepad.Model
 
         public void SaveFile()
         {  
-            throw new NotImplementedException(); 
+            File.WriteAllText(Path, Text);
+            IsSaved = true;
+        }
+
+        public void SaveFile(string path)
+        {
+            Path = path;
+            SaveFile();
         }
 
         private string _text;
