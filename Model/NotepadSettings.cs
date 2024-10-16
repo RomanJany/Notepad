@@ -20,7 +20,7 @@ namespace Notepad.Model
         {
             get
             {
-                return _theme
+                return _theme;
             }
             set
             {
