@@ -9,14 +9,14 @@ namespace Notepad.Model
 {
     public class TextFile
     {
-        TextFile()
+        public TextFile()
         {
             _text = "";
             _fileName = "";
             IsSaved = false;
         }
 
-        TextFile(string path) : this()
+        public TextFile(string path) : this()
         {
             OpenFile();
         }
