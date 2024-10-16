@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,18 @@ namespace Notepad.Model
 {
     public class TextFile
     {
+        TextFile()
+        {
+            _text = "";
+            _fileName = "";
+            IsSaved = false;
+        }
+
+        TextFile(string path) : this()
+        {
+            OpenFile();
+        }
+
         private string _text;
 
         public string Text 
