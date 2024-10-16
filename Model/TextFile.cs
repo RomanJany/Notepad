@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,13 +18,19 @@ namespace Notepad.Model
 
         public TextFile(string path) : this()
         {
-            Path = path;
-            OpenFile();
+            OpenFile(path);
         }
 
         public void OpenFile()
         {
-            throw new NotImplementedException();
+            Text = File.ReadAllText(Path);
+            IsSaved = true;
+        }
+
+        public void OpenFile(string path)
+        {
+            Path = path;
+            OpenFile();
         }
 
         public void SaveFile()
