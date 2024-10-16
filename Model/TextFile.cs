@@ -42,6 +42,7 @@ namespace Notepad.Model
             set
             {
                 _text = value;
+                IsSaved = false;
             }
         }
 
