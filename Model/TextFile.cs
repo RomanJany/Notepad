@@ -11,13 +11,13 @@ namespace Notepad.Model
     {
         public TextFile()
         {
-            _text = "";
-            FileName = "";
-            IsSaved = false;
+            Text = "";
+            Path = "";
         }
 
         public TextFile(string path) : this()
         {
+            Path = path;
             OpenFile();
         }
 
