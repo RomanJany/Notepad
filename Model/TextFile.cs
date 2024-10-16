@@ -12,7 +12,7 @@ namespace Notepad.Model
         public TextFile()
         {
             _text = "";
-            _fileName = "";
+            FileName = "";
             IsSaved = false;
         }
 
@@ -46,19 +46,7 @@ namespace Notepad.Model
             }
         }
 
-        private string _fileName;
-
-        public string FileName
-        { 
-            get 
-            { 
-                return _fileName; 
-            } 
-            set
-            {
-                _fileName = value;
-            }
-        }
+        public string Path { get; set; }
 
         public bool IsSaved { get; private set; }
     }
