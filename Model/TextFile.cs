@@ -21,6 +21,16 @@ namespace Notepad.Model
             OpenFile();
         }
 
+        public void OpenFile()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveFile()
+        {  
+            throw new NotImplementedException(); 
+        }
+
         private string _text;
 
         public string Text 
