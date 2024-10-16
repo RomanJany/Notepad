@@ -9,6 +9,16 @@ namespace Notepad.Model
 {
     public class NotepadSettings
     {
+        private void Open()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Save() 
+        { 
+            throw new NotImplementedException(); 
+        }
+
         public enum NotepadTheme
         {
             Light,
