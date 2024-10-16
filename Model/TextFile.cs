@@ -18,7 +18,16 @@ namespace Notepad.Model
 
         public TextFile(string path) : this()
         {
-            OpenFile(path);
+            // Tries to open a file, if it fails, sets path for new file
+            try
+            {
+                OpenFile(path);
+            }
+            catch
+            {
+                Path = path;
+                IsSaved = false;
+            }
         }
 
         public void OpenFile()
