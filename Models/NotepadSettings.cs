@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Notepad.Model
 {
@@ -70,8 +71,21 @@ namespace Notepad.Model
         }
 
         private void Save() 
-        { 
-            throw new NotImplementedException(); 
+        {
+            JsonNode node = JsonNode.Parse(@"{}");
+            node["Font"] = Font.ToString();
+            node["FontSize"] = FontSize;
+            switch (Theme)
+            {
+                case NotepadTheme.Light:
+                    node["Theme"] = "Light";
+                    break;
+                case NotepadTheme.Dark:
+                    node["Theme"] = "Dark";
+                    break;
+            }
+
+            File.WriteAllText(Path, node.ToJsonString());
         }
 
         public enum NotepadTheme
