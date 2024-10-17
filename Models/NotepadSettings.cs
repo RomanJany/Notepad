@@ -23,9 +23,9 @@ namespace Notepad.Model
             catch
             {
                 // Default values
+                Font = new FontFamily("Segoe UI");
                 Theme = NotepadTheme.Light;
                 FontSize = 12;
-                Font = new FontFamily("Segoe UI");
             }
         }
 
@@ -54,8 +54,8 @@ namespace Notepad.Model
                 }
 
                 // Once all properties are loaded successfully they are saved
-                FontSize = fontSize;
                 Font = fontFamily;
+                FontSize = fontSize;
                 Theme = theme;
             }
             else
