@@ -26,12 +26,6 @@ namespace Notepad.Model
                 Theme = NotepadTheme.Light;
                 FontSize = 12;
                 Font = new FontFamily("Segoe UI");
-
-                try
-                {
-                    Save();
-                }
-                catch { }
             }
         }
 
@@ -104,6 +98,11 @@ namespace Notepad.Model
             set
             {
                 _theme = value;
+                try
+                {
+                    Save();
+                }
+                catch { }
             }
         }
 
@@ -117,6 +116,11 @@ namespace Notepad.Model
             set
             {
                 _fontSize = value;
+                try
+                {
+                    Save();
+                }
+                catch { }
             }
         }
 
@@ -130,6 +134,11 @@ namespace Notepad.Model
             set
             {
                 _font = value;
+                try
+                {
+                    Save();
+                }
+                catch { }
             }
         }
 
