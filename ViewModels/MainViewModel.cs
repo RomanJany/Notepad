@@ -12,9 +12,6 @@ namespace Notepad.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public NotepadSettings notepadSettings { get; set; }
-        public TextFile textFile {  get; set; }
-
         public MainViewModel()
         {
             notepadSettings = new NotepadSettings("settings.json");
@@ -22,6 +19,35 @@ namespace Notepad.ViewModels
 
             newFileCommand = new NewFileCommand(this);
         }
+
+        private NotepadSettings _notepadSettings;
+        public NotepadSettings notepadSettings 
+        { 
+            get
+            {
+                return _notepadSettings;
+            }
+            set
+            {
+                _notepadSettings = value;
+                OnPropertyChanged(nameof(notepadSettings));
+            }
+        }
+
+        private TextFile _textFile;
+        public TextFile textFile 
+        { 
+            get
+            {
+                return _textFile;
+            }
+            set
+            {
+                _textFile = value;
+                OnPropertyChanged(nameof(textFile));
+            }
+        }
+
 
         public NotepadSettings.NotepadTheme Theme
         {
