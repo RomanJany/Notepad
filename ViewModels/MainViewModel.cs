@@ -31,6 +31,9 @@ namespace Notepad.ViewModels
             {
                 _notepadSettings = value;
                 OnPropertyChanged(nameof(notepadSettings));
+                OnPropertyChanged(nameof(Theme));
+                OnPropertyChanged(nameof(FontSize));
+                OnPropertyChanged(nameof(Font));
             }
         }
 
@@ -45,6 +48,7 @@ namespace Notepad.ViewModels
             {
                 _textFile = value;
                 OnPropertyChanged(nameof(textFile));
+                OnPropertyChanged(nameof(Text));
             }
         }
 
