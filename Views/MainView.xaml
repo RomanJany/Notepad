@@ -41,7 +41,12 @@
         <StatusBar DockPanel.Dock="Bottom" Background="LightGray">
             <StatusBarItem></StatusBarItem>
         </StatusBar>
-        <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto">
+        <TextBox TextWrapping="Wrap" 
+                 AcceptsReturn="True" 
+                 VerticalScrollBarVisibility="Auto"
+                 FontSize="{Binding FontSize}"
+                 FontFamily="{Binding Font}"
+                 Text="{Binding Text}">
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Undo" />
