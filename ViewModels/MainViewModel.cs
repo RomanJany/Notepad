@@ -12,8 +12,8 @@ namespace Notepad.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        private NotepadSettings notepadSettings;
-        private TextFile textFile;
+        public NotepadSettings notepadSettings { get; set; }
+        public TextFile textFile {  get; set; }
 
         public MainViewModel()
         {
