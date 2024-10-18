@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Notepad.ViewModels
 {
@@ -16,6 +17,58 @@ namespace Notepad.ViewModels
         {
             notepadSettings = new NotepadSettings("settings.json");
             textFile = new TextFile();
+        }
+
+        public NotepadSettings.NotepadTheme Theme
+        {
+            get
+            {
+                return notepadSettings.Theme;
+            }
+            set
+            {
+                notepadSettings.Theme = value;
+                OnPropertyChanged(nameof(Theme));
+            }
+        }
+
+        public double FontSize
+        {
+            get
+            {
+                return notepadSettings.FontSize;
+            }
+            set
+            {
+                notepadSettings.FontSize = value;
+                OnPropertyChanged(nameof(FontSize));
+            }
+        }
+
+        public FontFamily Font
+        {
+            get
+            {
+                return notepadSettings.Font;
+            }
+            set
+            {
+                notepadSettings.Font = value;
+                OnPropertyChanged(nameof(Font));
+            }
+        }
+
+        public string Text
+        {
+            get
+            {
+                return textFile.Text;
+            }
+            set
+            {
+                textFile.Text = value;
+                OnPropertyChanged(nameof(Text));
+            }
         }
     }
 }
