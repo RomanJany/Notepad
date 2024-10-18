@@ -46,7 +46,7 @@
                  VerticalScrollBarVisibility="Auto"
                  FontSize="{Binding FontSize}"
                  FontFamily="{Binding Font}"
-                 Text="{Binding Text}">
+                 Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}">
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Undo" />
