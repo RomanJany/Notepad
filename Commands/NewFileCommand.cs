@@ -1,4 +1,5 @@
-﻿using Notepad.ViewModels;
+﻿using Notepad.Model;
+using Notepad.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            _mainViewModel.textFile = new TextFile();
         }
     }
 }
