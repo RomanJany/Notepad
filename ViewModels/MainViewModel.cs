@@ -1,9 +1,11 @@
-﻿using Notepad.Model;
+﻿using Notepad.Commands;
+using Notepad.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Notepad.ViewModels
@@ -17,6 +19,8 @@ namespace Notepad.ViewModels
         {
             notepadSettings = new NotepadSettings("settings.json");
             textFile = new TextFile();
+
+            newFileCommand = new NewFileCommand(this);
         }
 
         public NotepadSettings.NotepadTheme Theme
@@ -70,5 +74,7 @@ namespace Notepad.ViewModels
                 OnPropertyChanged(nameof(Text));
             }
         }
+
+        public ICommand newFileCommand { get; }
     }
 }
