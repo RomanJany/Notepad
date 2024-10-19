@@ -53,7 +53,6 @@ namespace Notepad.ViewModels
                 OnPropertyChanged(nameof(textFile));
                 OnPropertyChanged(nameof(Text));
                 OnPropertyChanged(nameof(FilePath));
-                OnPropertyChanged(nameof(FileSaved));
             }
         }
 
