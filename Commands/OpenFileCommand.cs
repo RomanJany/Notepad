@@ -1,4 +1,5 @@
-﻿using Notepad.ViewModels;
+﻿using Microsoft.Win32;
+using Notepad.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,14 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                _mainViewModel.textFile.OpenFile(openFileDialog.FileName);
+                _mainViewModel.textFile = _mainViewModel.textFile;
+            }
         }
     }
 }
