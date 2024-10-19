@@ -19,7 +19,15 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                _mainViewModel.textFile.SaveFile(saveFileDialog.FileName);
+            }
+
+            _mainViewModel.textFile = _mainViewModel.textFile;
         }
     }
 }
