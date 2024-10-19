@@ -19,7 +19,7 @@
                 <MenuItem Header="Open" Command="{Binding openFileCommand}" />
                 <MenuItem Header="Save" Command="{Binding saveFileCommand}" />
                 <MenuItem Header="Save as" Command="{Binding saveAsFileCommand}" />
-                <MenuItem Header="Print" />
+                <MenuItem Header="Print" Command="{Binding printCommand}" />
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Undo" />
