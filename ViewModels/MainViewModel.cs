@@ -18,6 +18,7 @@ namespace Notepad.ViewModels
             textFile = new TextFile();
 
             newFileCommand = new NewFileCommand(this);
+            openFileCommand = new OpenFileCommand(this);
         }
 
         private NotepadSettings _notepadSettings;
@@ -106,5 +107,6 @@ namespace Notepad.ViewModels
         }
 
         public ICommand newFileCommand { get; }
+        public ICommand openFileCommand { get; }
     }
 }
