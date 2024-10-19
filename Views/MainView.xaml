@@ -17,7 +17,7 @@
                 <MenuItem Header="New file" Command="{Binding newFileCommand}" />
                 <MenuItem Header="New window" />
                 <MenuItem Header="Open" Command="{Binding openFileCommand}" />
-                <MenuItem Header="Save" />
+                <MenuItem Header="Save" Command="{Binding saveFileCommand}" />
                 <MenuItem Header="Save as" />
                 <MenuItem Header="Print" />
             </MenuItem>
