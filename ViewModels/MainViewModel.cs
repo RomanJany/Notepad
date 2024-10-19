@@ -22,6 +22,7 @@ namespace Notepad.ViewModels
             openFileCommand = new OpenFileCommand(this);
             saveFileCommand = new SaveFileCommand(this);
             saveAsFileCommand = new SaveAsFileCommand(this);
+            printCommand = new PrintCommand(this);
         }
 
         private NotepadSettings _notepadSettings;
@@ -138,6 +139,7 @@ namespace Notepad.ViewModels
         public ICommand openFileCommand { get; }
         public ICommand saveFileCommand { get; }
         public ICommand saveAsFileCommand { get; }
+        public ICommand printCommand { get; }
 
         void UpdateWindowTitle()
         {
