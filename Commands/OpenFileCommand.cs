@@ -11,7 +11,7 @@ namespace Notepad.Commands
     {
         private readonly MainViewModel _mainViewModel;
 
-        OpenFileCommand(MainViewModel mainViewModel)
+        public OpenFileCommand(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
         }
