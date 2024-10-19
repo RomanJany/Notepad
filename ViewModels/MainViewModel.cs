@@ -52,6 +52,7 @@ namespace Notepad.ViewModels
                 _textFile = value;
                 OnPropertyChanged(nameof(textFile));
                 OnPropertyChanged(nameof(Text));
+                OnPropertyChanged(nameof(FilePath));
             }
         }
 
@@ -105,6 +106,19 @@ namespace Notepad.ViewModels
             {
                 textFile.Text = value;
                 OnPropertyChanged(nameof(Text));
+            }
+        }
+
+        public string FilePath
+        {
+            get
+            {
+                return textFile.Path;
+            }
+            set
+            {
+                textFile.Path = value;
+                OnPropertyChanged(nameof(FilePath));
             }
         }
 
