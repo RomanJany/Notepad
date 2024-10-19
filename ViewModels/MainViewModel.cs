@@ -2,6 +2,7 @@
 using Notepad.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,15 @@ namespace Notepad.ViewModels
             saveFileCommand = new SaveFileCommand(this);
             saveAsFileCommand = new SaveAsFileCommand(this);
             printCommand = new PrintCommand(this);
+        }
+
+        private ObservableCollection<double> _fontSizeCollection = [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72];
+        public ObservableCollection<double> FontSizeCollection
+        {
+            get
+            {
+                return _fontSizeCollection;
+            }
         }
 
         private NotepadSettings _notepadSettings;
