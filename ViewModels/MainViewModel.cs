@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -50,6 +51,7 @@ namespace Notepad.ViewModels
             set
             {
                 _textFile = value;
+                Text = Text;
                 OnPropertyChanged(nameof(textFile));
                 OnPropertyChanged(nameof(Text));
                 OnPropertyChanged(nameof(FilePath));
@@ -104,6 +106,8 @@ namespace Notepad.ViewModels
             }
             set
             {
+                UpdateWindowTitle();
+
                 textFile.Text = value;
                 OnPropertyChanged(nameof(Text));
             }
@@ -134,5 +138,28 @@ namespace Notepad.ViewModels
         public ICommand openFileCommand { get; }
         public ICommand saveFileCommand { get; }
         public ICommand saveAsFileCommand { get; }
+
+        void UpdateWindowTitle()
+        {
+            string fileName;
+            if (FilePath == "")
+            {
+                fileName = "Unitled";
+            }
+            else
+            {
+                string[] pathArray = FilePath.Split("\\");
+                fileName = pathArray.Last();
+            }
+
+            if (textFile.IsSaved)
+            {
+                Application.Current.MainWindow.Title = fileName;
+            }
+            else
+            {
+                Application.Current.MainWindow.Title = fileName + "*";
+            }
+        }
     }
 }
