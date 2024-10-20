@@ -18,7 +18,10 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            if (parameter != null)
+            {
+                _mainViewModel.FontSize = (double)parameter;
+            }
         }
     }
 }
