@@ -24,6 +24,7 @@ namespace Notepad.ViewModels
             saveFileCommand = new SaveFileCommand(this);
             saveAsFileCommand = new SaveAsFileCommand(this);
             printCommand = new PrintCommand(this);
+            setFontSizeCommand = new SetFontSizeCommand(this);
         }
 
         private ObservableCollection<double> _fontSizeCollection = [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72];
@@ -150,6 +151,7 @@ namespace Notepad.ViewModels
         public ICommand saveFileCommand { get; }
         public ICommand saveAsFileCommand { get; }
         public ICommand printCommand { get; }
+        public ICommand setFontSizeCommand { get; }
 
         void UpdateWindowTitle()
         {
