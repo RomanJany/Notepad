@@ -32,7 +32,16 @@
             </MenuItem>
             <MenuItem Header="View">
                 <MenuItem Header="Font" />
-                <MenuItem Header="Font size" />
+                <MenuItem Header="Font size"
+                          x:Name="FontSizeMenu"
+                          ItemsSource="{Binding FontSizeCollection}">
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="Command" Value="{Binding ElementName=FontSizeMenu, Path=DataContext.setFontSizeCommand}" />
+                            <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Header}" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Settings" HorizontalAlignment="Right">
 
