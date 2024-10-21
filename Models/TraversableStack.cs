@@ -53,7 +53,14 @@ namespace Notepad.Models
 
         public bool CanPop()
         {
-            throw new NotImplementedException();
+            if (_mainStack.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public bool CanGoBack()
