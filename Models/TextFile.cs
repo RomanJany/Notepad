@@ -38,6 +38,7 @@ namespace Notepad.Model
         {
             Text = File.ReadAllText(Path);
             IsSaved = true;
+            TextHistory.Clear(Text);
         }
 
         public void OpenFile(string path)
