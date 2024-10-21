@@ -27,6 +27,10 @@ namespace Notepad.Commands
                 _mainViewModel.textFile.OpenFile(openFileDialog.FileName);
                 _mainViewModel.textFile = _mainViewModel.textFile;
             }
+
+            // Refresh Undo/Redo
+            ((UndoCommand)_mainViewModel.undoCommand).OnCanExecuteChanged();
+            ((RedoCommand)_mainViewModel.redoCommand).OnCanExecuteChanged();
         }
     }
 }

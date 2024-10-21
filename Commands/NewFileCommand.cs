@@ -20,6 +20,10 @@ namespace Notepad.Commands
         public override void Execute(object? parameter)
         {
             _mainViewModel.textFile = new TextFile();
+
+            // Refresh Undo/Redo
+            ((UndoCommand)_mainViewModel.undoCommand).OnCanExecuteChanged();
+            ((RedoCommand)_mainViewModel.redoCommand).OnCanExecuteChanged();
         }
     }
 }
