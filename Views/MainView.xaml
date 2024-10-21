@@ -22,7 +22,7 @@
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Undo" Command="{Binding undoCommand}" />
-                <MenuItem Header="Redo" />
+                <MenuItem Header="Redo" Command="{Binding redoCommand}" />
                 <MenuItem Header="Cut" />
                 <MenuItem Header="Copy" />
                 <MenuItem Header="Paste" />
@@ -59,7 +59,7 @@
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Undo" Command="{Binding undoCommand}" />
-                    <MenuItem Header="Redo" />
+                    <MenuItem Header="Redo" Command="{Binding redoCommand}" />
                     <MenuItem Header="Cut" />
                     <MenuItem Header="Copy" />
                     <MenuItem Header="Paste" />
