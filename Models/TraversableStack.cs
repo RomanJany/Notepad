@@ -42,7 +42,7 @@ namespace Notepad.Models
 
         public T Peek()
         {
-            throw new NotImplementedException();
+            return _mainStack.Peek();
         }
 
         public void Clear()
