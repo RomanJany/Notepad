@@ -1,5 +1,6 @@
 ﻿using Notepad.Commands;
 using Notepad.Model;
+using Notepad.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,6 +19,7 @@ namespace Notepad.ViewModels
         {
             notepadSettings = new NotepadSettings("settings.json");
             textFile = new TextFile();
+            TextHistory = new TraversableStack<string>();
 
             newFileCommand = new NewFileCommand(this);
             openFileCommand = new OpenFileCommand(this);
@@ -36,6 +38,8 @@ namespace Notepad.ViewModels
                 return _fontSizeCollection;
             }
         }
+
+        public TraversableStack<string> TextHistory;
 
         private NotepadSettings _notepadSettings;
         public NotepadSettings notepadSettings 
