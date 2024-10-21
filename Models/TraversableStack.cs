@@ -34,7 +34,10 @@ namespace Notepad.Models
 
         public T Back()
         {
-            throw new NotImplementedException();
+            T item = _historyStack.Pop();
+            _mainStack.Push(item);
+
+            return item;
         }
 
         public T Peek()
