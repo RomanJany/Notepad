@@ -57,6 +57,7 @@
                  FontFamily="{Binding Font}"
                  Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}">
             <TextBox.InputBindings>
+                <KeyBinding Gesture="CTRL+S" Command="{Binding saveFileCommand}" />
                 <KeyBinding Gesture="CTRL+Z" Command="{Binding undoCommand}" />
                 <KeyBinding Gesture="CTRL+Y" Command="{Binding redoCommand}" />
             </TextBox.InputBindings>
