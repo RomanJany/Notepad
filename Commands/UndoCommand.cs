@@ -18,7 +18,8 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            _mainViewModel.TextHistory.Push(_mainViewModel.Text);
+            _mainViewModel.TextHistory.Pop();
+            _mainViewModel.Text = _mainViewModel.TextHistory.Peek();
         }
     }
 }
