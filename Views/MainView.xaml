@@ -21,7 +21,7 @@
                 <MenuItem Header="Print" Command="{Binding printCommand}" />
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Undo" />
+                <MenuItem Header="Undo" Command="{Binding undoCommand}" />
                 <MenuItem Header="Redo" />
                 <MenuItem Header="Cut" />
                 <MenuItem Header="Copy" />
@@ -58,7 +58,7 @@
                  Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}">
             <TextBox.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Undo" />
+                    <MenuItem Header="Undo" Command="{Binding undoCommand}" />
                     <MenuItem Header="Redo" />
                     <MenuItem Header="Cut" />
                     <MenuItem Header="Copy" />
