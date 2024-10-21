@@ -18,7 +18,7 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            _mainViewModel.TextHistory.Push(_mainViewModel.Text);
         }
     }
 }
