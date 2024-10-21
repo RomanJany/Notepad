@@ -22,6 +22,7 @@
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Undo" />
+                <MenuItem Header="Redo" />
                 <MenuItem Header="Cut" />
                 <MenuItem Header="Copy" />
                 <MenuItem Header="Paste" />
@@ -58,6 +59,7 @@
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Undo" />
+                    <MenuItem Header="Redo" />
                     <MenuItem Header="Cut" />
                     <MenuItem Header="Copy" />
                     <MenuItem Header="Paste" />
