@@ -56,6 +56,10 @@
                  FontSize="{Binding FontSize}"
                  FontFamily="{Binding Font}"
                  Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.InputBindings>
+                <KeyBinding Gesture="CTRL+Z" Command="{Binding undoCommand}" />
+                <KeyBinding Gesture="CTRL+Y" Command="{Binding redoCommand}" />
+            </TextBox.InputBindings>
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Undo" Command="{Binding undoCommand}" />
