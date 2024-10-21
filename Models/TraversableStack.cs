@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Notepad.Models
 {
+    // Works like regular stack, but remembers history when using Pop() allowing return with Back()
     public class TraversableStack<T>
     {
         private Stack<T> _mainStack;
