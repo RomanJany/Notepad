@@ -19,7 +19,6 @@ namespace Notepad.ViewModels
         {
             notepadSettings = new NotepadSettings("settings.json");
             textFile = new TextFile();
-            TextHistory = new TraversableStack<string>();
 
             newFileCommand = new NewFileCommand(this);
             openFileCommand = new OpenFileCommand(this);
@@ -40,7 +39,17 @@ namespace Notepad.ViewModels
             }
         }
 
-        public TraversableStack<string> TextHistory;
+        public TraversableStack<string> TextHistory
+        {
+            get
+            {
+                return textFile.TextHistory;
+            }
+            set
+            {
+                textFile.TextHistory = value;
+            }
+        }
 
         private NotepadSettings _notepadSettings;
         public NotepadSettings notepadSettings 

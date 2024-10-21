@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Notepad.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +15,7 @@ namespace Notepad.Model
         {
             Text = "";
             Path = "";
+            TextHistory = new TraversableStack<string>();
         }
 
         public TextFile(string path) : this()
@@ -28,6 +30,8 @@ namespace Notepad.Model
                 Path = path;
                 IsSaved = false;
             }
+            
+            TextHistory.Clear(Text);
         }
 
         public void OpenFile()
@@ -53,6 +57,8 @@ namespace Notepad.Model
             Path = path;
             SaveFile();
         }
+
+        public TraversableStack<String> TextHistory { get; set; }
 
         private string _text;
 
