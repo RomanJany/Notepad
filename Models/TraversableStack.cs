@@ -20,7 +20,8 @@ namespace Notepad.Models
 
         public void Push(T item)
         {
-            throw new NotImplementedException();
+            _mainStack.Push(item);
+            _historyStack.Clear();
         }
 
         public T Pop()
