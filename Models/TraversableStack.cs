@@ -65,7 +65,14 @@ namespace Notepad.Models
 
         public bool CanGoBack()
         { 
-            throw new NotImplementedException(); 
+            if (_historyStack.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
