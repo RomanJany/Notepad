@@ -21,5 +21,10 @@ namespace Notepad.Commands
             _mainViewModel.TextHistory.Pop();
             _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Peek();
         }
+
+        public override bool CanExecute(object? parameter)
+        {
+            return _mainViewModel.TextHistory.CanPop;
+        }
     }
 }
