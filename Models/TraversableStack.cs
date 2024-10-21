@@ -47,7 +47,8 @@ namespace Notepad.Models
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            _mainStack.Clear();
+            _historyStack.Clear();
         }
 
         public bool CanPop()
