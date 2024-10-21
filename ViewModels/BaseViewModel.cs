@@ -11,7 +11,7 @@ namespace Notepad.ViewModels
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void OnPropertyChanged(string PropertyName)
+        public void OnPropertyChanged(string PropertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
         }
