@@ -26,7 +26,10 @@ namespace Notepad.Models
 
         public T Pop()
         {
-            throw new NotImplementedException();
+            T item = _mainStack.Pop();
+            _historyStack.Push(item);
+
+            return item;
         }
 
         public T Back()
