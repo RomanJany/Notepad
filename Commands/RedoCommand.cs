@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 
 namespace Notepad.Commands
 {
-    public class UndoCommand : BaseCommand
+    public class RedoCommand : BaseCommand
     {
         private readonly MainViewModel _mainViewModel;
-        
-        public UndoCommand(MainViewModel mainViewModel)
+
+        public RedoCommand(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
         }
 
         public override void Execute(object? parameter)
         {
-            _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Pop();
+            _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Back();
 
             OnCanExecuteChanged();
-            ((RedoCommand)_mainViewModel.redoCommand).OnCanExecuteChanged();
+            ((UndoCommand)_mainViewModel.undoCommand).OnCanExecuteChanged();
             _mainViewModel.OnPropertyChanged(nameof(_mainViewModel.Text));
         }
 
         public override bool CanExecute(object? parameter)
         {
-            return _mainViewModel.TextHistory.CanPop;
+            return _mainViewModel.TextHistory.CanGoBack;
         }
     }
 }

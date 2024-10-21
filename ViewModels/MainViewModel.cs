@@ -28,6 +28,7 @@ namespace Notepad.ViewModels
             printCommand = new PrintCommand(this);
             setFontSizeCommand = new SetFontSizeCommand(this);
             undoCommand = new UndoCommand(this);
+            redoCommand = new RedoCommand(this);
         }
 
         private ObservableCollection<double> _fontSizeCollection = [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72];
@@ -127,7 +128,8 @@ namespace Notepad.ViewModels
                 try
                 {
                     TextHistory.Push(textFile.Text);
-                    ((UndoCommand) undoCommand).OnCanExecuteChanged();
+                    ((UndoCommand)undoCommand).OnCanExecuteChanged();
+                    ((RedoCommand)redoCommand).OnCanExecuteChanged();
                 }
                 catch { }
 
@@ -164,6 +166,7 @@ namespace Notepad.ViewModels
         public ICommand printCommand { get; }
         public ICommand setFontSizeCommand { get; }
         public ICommand undoCommand {  get; }
+        public ICommand redoCommand { get; }
 
         void UpdateWindowTitle()
         {
