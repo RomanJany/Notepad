@@ -11,11 +11,18 @@ namespace Notepad.Models
     {
         private Stack<T> _mainStack;
         private Stack<T> _historyStack;
+        private T? _defaultValue;
 
         public TraversableStack()
         {
             _mainStack = new Stack<T>();
             _historyStack = new Stack<T>();
+            _defaultValue = default(T);
+        }
+
+        public TraversableStack(T value) : this()
+        {
+            _defaultValue = value;
         }
 
         public void Push(T item)
@@ -42,13 +49,27 @@ namespace Notepad.Models
 
         public T Peek()
         {
-            return _mainStack.Peek();
+            if (_mainStack.Count == 0)
+            {
+                return _defaultValue;
+            }
+            else
+            {
+                return _mainStack.Peek();
+            }
         }
 
         public void Clear()
         {
             _mainStack.Clear();
             _historyStack.Clear();
+            _defaultValue = default(T);
+        }
+
+        public void Clear(T value)
+        {
+            Clear();
+            _defaultValue = value;
         }
 
         public bool CanPop
