@@ -51,27 +51,19 @@ namespace Notepad.Models
             _historyStack.Clear();
         }
 
-        public bool CanPop()
+        public bool CanPop
         {
-            if (_mainStack.Count == 0)
+            get
             {
-                return false;
-            }
-            else
-            {
-                return true;
+                return (_mainStack.Count != 0);
             }
         }
 
-        public bool CanGoBack()
+        public bool CanGoBack
         { 
-            if (_historyStack.Count == 0)
+            get
             {
-                return false;
-            }
-            else
-            {
-                return true;
+                return (_historyStack.Count != 0);
             }
         }
     }
