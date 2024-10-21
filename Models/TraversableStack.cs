@@ -16,5 +16,40 @@ namespace Notepad.Models
             _mainStack = new Stack<T>();
             _historyStack = new Stack<T>();
         }
+
+        public void Push(T item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Pop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Back()
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Peek()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CanPop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CanGoBack()
+        { 
+            throw new NotImplementedException(); 
+        }
     }
 }
