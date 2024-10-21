@@ -68,7 +68,7 @@ namespace Notepad.ViewModels
             set
             {
                 _textFile = value;
-                Text = Text;
+                UpdateWindowTitle();
                 OnPropertyChanged(nameof(textFile));
                 OnPropertyChanged(nameof(Text));
                 OnPropertyChanged(nameof(FilePath));
@@ -124,6 +124,12 @@ namespace Notepad.ViewModels
             set
             {
                 UpdateWindowTitle();
+                try
+                {
+                    TextHistory.Push(textFile.Text);
+                    ((UndoCommand) undoCommand).OnCanExecuteChanged();
+                }
+                catch { }
 
                 textFile.Text = value;
                 OnPropertyChanged(nameof(Text));

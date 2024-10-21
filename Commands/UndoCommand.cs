@@ -18,8 +18,10 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            _mainViewModel.TextHistory.Pop();
-            _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Peek();
+            _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Pop();
+
+            OnCanExecuteChanged();
+            _mainViewModel.OnPropertyChanged(nameof(_mainViewModel.Text));
         }
 
         public override bool CanExecute(object? parameter)
