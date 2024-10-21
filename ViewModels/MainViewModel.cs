@@ -133,9 +133,9 @@ namespace Notepad.ViewModels
             }
             set
             {
-                UpdateWindowTitle();
-
                 textFile.Text = value;
+
+                UpdateWindowTitle();
 
                 try
                 {
