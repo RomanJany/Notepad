@@ -18,7 +18,8 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Pop();
+            _mainViewModel.TextHistory.Pop();
+            _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Peek();
 
             OnCanExecuteChanged();
             ((RedoCommand)_mainViewModel.redoCommand).OnCanExecuteChanged();

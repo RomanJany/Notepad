@@ -125,6 +125,9 @@ namespace Notepad.ViewModels
             set
             {
                 UpdateWindowTitle();
+
+                textFile.Text = value;
+
                 try
                 {
                     TextHistory.Push(textFile.Text);
@@ -132,8 +135,7 @@ namespace Notepad.ViewModels
                     ((RedoCommand)redoCommand).OnCanExecuteChanged();
                 }
                 catch { }
-
-                textFile.Text = value;
+            
                 OnPropertyChanged(nameof(Text));
             }
         }
