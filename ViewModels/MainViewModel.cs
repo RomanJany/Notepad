@@ -21,6 +21,9 @@ namespace Notepad.ViewModels
             notepadSettings = new NotepadSettings("settings.json");
             textFile = new TextFile();
 
+            FindVisibility = Visibility.Collapsed;
+            ReplaceVisibility = Visibility.Collapsed;
+
             newFileCommand = new NewFileCommand(this);
             openFileCommand = new OpenFileCommand(this);
             saveFileCommand = new SaveFileCommand(this);
@@ -29,6 +32,34 @@ namespace Notepad.ViewModels
             setFontSizeCommand = new SetFontSizeCommand(this);
             undoCommand = new UndoCommand(this);
             redoCommand = new RedoCommand(this);
+        }
+
+        private Visibility _findVisibility;
+        public Visibility FindVisibility
+        {
+            get
+            {
+                return _findVisibility;
+            }
+            set
+            {
+                _findVisibility = value;
+                _replaceVisibility = Visibility.Collapsed;
+            }
+        }
+
+        private Visibility _replaceVisibility;
+        public Visibility ReplaceVisibility
+        {
+            get
+            {
+                return _replaceVisibility;
+            }
+            set
+            {
+                _replaceVisibility = value;
+                _findVisibility = Visibility.Collapsed;
+            }
         }
 
         public TraversableStack<int> CaretIndexHistory
