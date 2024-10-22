@@ -49,6 +49,16 @@
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Background="LightGray">
+            <StatusBarItem Visibility="{Binding FindVisibility}">
+                <local:FindView />
+            </StatusBarItem>
+            <Separator Visibility="{Binding FindVisibility}" />
+
+            <StatusBarItem Visibility="{Binding ReplaceVisibility}">
+                <local:ReplaceView />
+            </StatusBarItem>
+            <Separator Visibility="{Binding ReplaceVisibility}" />
+
             <StatusBarItem Content="{Binding TextLength}" />
         </StatusBar>
         <TextBox TextWrapping="Wrap" 
