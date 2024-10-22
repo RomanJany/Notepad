@@ -48,6 +48,8 @@ namespace Notepad.ViewModels
             {
                 _findVisibility = value;
                 _replaceVisibility = Visibility.Collapsed;
+                OnPropertyChanged(nameof(FindVisibility));
+                OnPropertyChanged(nameof(ReplaceVisibility));
             }
         }
 
@@ -62,6 +64,8 @@ namespace Notepad.ViewModels
             {
                 _replaceVisibility = value;
                 _findVisibility = Visibility.Collapsed;
+                OnPropertyChanged(nameof(ReplaceVisibility));
+                OnPropertyChanged(nameof(FindVisibility));
             }
         }
 
