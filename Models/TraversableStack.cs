@@ -59,6 +59,18 @@ namespace Notepad.Models
             }
         }
 
+        public T PeekHistory()
+        {
+            if (_historyStack.Count == 0)
+            {
+                return _defaultValue;
+            }
+            else
+            {
+                return _historyStack.Peek();
+            }
+        }
+
         public void Clear()
         {
             _mainStack.Clear();
