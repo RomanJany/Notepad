@@ -49,7 +49,7 @@
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Background="LightGray">
-            <StatusBarItem></StatusBarItem>
+            <StatusBarItem Content="{Binding TextLength}" />
         </StatusBar>
         <TextBox TextWrapping="Wrap" 
                  AcceptsReturn="True" 

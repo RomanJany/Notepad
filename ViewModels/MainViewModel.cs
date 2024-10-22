@@ -43,6 +43,29 @@ namespace Notepad.ViewModels
             }
         }
 
+        public string CaretPosition
+        {
+            get
+            {
+                return CaretIndex.ToString();
+            }
+        }
+
+        public string TextLength
+        {
+            get
+            {
+                if (Text.Length == 1)
+                {
+                    return "1 character";
+                }
+                else
+                {
+                    return Text.Length.ToString() + " characters";
+                }
+            }
+        }
+
         private int _caretIndex;
         public int CaretIndex
         {
@@ -174,6 +197,7 @@ namespace Notepad.ViewModels
                 catch { }
             
                 OnPropertyChanged(nameof(Text));
+                OnPropertyChanged(nameof(TextLength));
             }
         }
 
