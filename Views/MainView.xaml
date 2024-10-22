@@ -24,10 +24,10 @@
             <MenuItem Header="Edit">
                 <MenuItem Header="Undo" Command="{Binding undoCommand}" />
                 <MenuItem Header="Redo" Command="{Binding redoCommand}" />
-                <MenuItem Header="Cut" />
-                <MenuItem Header="Copy" />
-                <MenuItem Header="Paste" />
-                <MenuItem Header="Delete" />
+                <MenuItem Header="Cut" Command="ApplicationCommands.Cut" />
+                <MenuItem Header="Copy" Command="ApplicationCommands.Copy" />
+                <MenuItem Header="Paste" Command="ApplicationCommands.Paste" />
+                <MenuItem Header="Delete" Command="ApplicationCommands.Delete" />
                 <MenuItem Header="Find" />
                 <MenuItem Header="Replace" />
             </MenuItem>
@@ -68,10 +68,10 @@
                 <ContextMenu>
                     <MenuItem Header="Undo" Command="{Binding undoCommand}" />
                     <MenuItem Header="Redo" Command="{Binding redoCommand}" />
-                    <MenuItem Header="Cut" />
-                    <MenuItem Header="Copy" />
-                    <MenuItem Header="Paste" />
-                    <MenuItem Header="Delete" />
+                    <MenuItem Header="Cut" Command="ApplicationCommands.Cut" />
+                    <MenuItem Header="Copy" Command="ApplicationCommands.Copy" />
+                    <MenuItem Header="Paste" Command="ApplicationCommands.Paste" />
+                    <MenuItem Header="Delete" Command="ApplicationCommands.Delete" />
                 </ContextMenu>
             </TextBox.ContextMenu>
         </TextBox>
