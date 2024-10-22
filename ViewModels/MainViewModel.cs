@@ -32,6 +32,9 @@ namespace Notepad.ViewModels
             setFontSizeCommand = new SetFontSizeCommand(this);
             undoCommand = new UndoCommand(this);
             redoCommand = new RedoCommand(this);
+            showFindCommand = new ShowFindCommand(this);
+            showReplaceCommand = new ShowReplaceCommand(this);
+            hideFindAndReplaceCommand = new HideFindAndReplaceCommand(this);
         }
 
         private Visibility _findVisibility;
@@ -261,6 +264,9 @@ namespace Notepad.ViewModels
         public ICommand setFontSizeCommand { get; }
         public ICommand undoCommand {  get; }
         public ICommand redoCommand { get; }
+        public ICommand showFindCommand {  get; }
+        public ICommand showReplaceCommand {  get; }
+        public ICommand hideFindAndReplaceCommand { get; }
 
         void UpdateWindowTitle()
         {
