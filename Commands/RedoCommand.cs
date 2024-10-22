@@ -18,11 +18,14 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Back();
+            _mainViewModel.textFile.Text = _mainViewModel.TextHistory.Back();            
 
             OnCanExecuteChanged();
             ((UndoCommand)_mainViewModel.undoCommand).OnCanExecuteChanged();
             _mainViewModel.OnPropertyChanged(nameof(_mainViewModel.Text));
+
+            _mainViewModel.CaretIndexHistory.Back();
+            _mainViewModel.CaretIndex = _mainViewModel.CaretIndexHistory.PeekHistory();
         }
 
         public override bool CanExecute(object? parameter)

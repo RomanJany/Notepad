@@ -1,4 +1,5 @@
-﻿using Notepad.Commands;
+﻿using Notepad.AttachedProperties;
+using Notepad.Commands;
 using Notepad.Model;
 using Notepad.Models;
 using System;
@@ -28,6 +29,32 @@ namespace Notepad.ViewModels
             setFontSizeCommand = new SetFontSizeCommand(this);
             undoCommand = new UndoCommand(this);
             redoCommand = new RedoCommand(this);
+        }
+
+        public TraversableStack<int> CaretIndexHistory
+        {
+            get
+            {
+                return textFile.CaretHistory;
+            }
+            set
+            {
+                textFile.CaretHistory = value;
+            }
+        }
+
+        private int _caretIndex;
+        public int CaretIndex
+        {
+            get
+            {
+                return _caretIndex;
+            }
+            set
+            {
+                _caretIndex = value;
+                OnPropertyChanged(nameof(CaretIndex));
+            }
         }
 
         private ObservableCollection<double> _fontSizeCollection = [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72];
@@ -140,6 +167,7 @@ namespace Notepad.ViewModels
                 try
                 {
                     TextHistory.Push(textFile.Text);
+                    CaretIndexHistory.Push(CaretIndex);
                     ((UndoCommand)undoCommand).OnCanExecuteChanged();
                     ((RedoCommand)redoCommand).OnCanExecuteChanged();
                 }

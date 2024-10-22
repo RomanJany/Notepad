@@ -1,4 +1,5 @@
-﻿using Notepad.ViewModels;
+﻿using Notepad.AttachedProperties;
+using Notepad.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,12 @@ namespace Notepad.Views
             InitializeComponent();
             MainViewModel mainViewModel = new MainViewModel();
             this.DataContext = mainViewModel;
+        }
+
+        private void TextBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            //((TextBox)sender).TextChanged += TextBoxProperties.OnCaretIndexChanged;
+            ((TextBox)sender).TextChanged += TextBoxProperties.UpdateCaretIndexFromTextBox;
         }
     }
 }
