@@ -31,7 +31,6 @@ namespace Notepad.Views
 
         private void TextBox_Loaded(object sender, RoutedEventArgs e)
         {
-            //((TextBox)sender).TextChanged += TextBoxProperties.OnCaretIndexChanged;
             ((TextBox)sender).TextChanged += TextBoxProperties.UpdateCaretIndexFromTextBox;
         }
     }
