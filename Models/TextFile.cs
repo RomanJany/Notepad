@@ -16,6 +16,7 @@ namespace Notepad.Model
             Text = "";
             Path = "";
             TextHistory = new TraversableStack<string>();
+            CaretHistory = new TraversableStack<int>();
         }
 
         public TextFile(string path) : this()
@@ -39,6 +40,7 @@ namespace Notepad.Model
             Text = File.ReadAllText(Path);
             IsSaved = true;
             TextHistory.Clear(Text);
+            CaretHistory.Clear();
         }
 
         public void OpenFile(string path)
@@ -60,6 +62,7 @@ namespace Notepad.Model
         }
 
         public TraversableStack<String> TextHistory { get; set; }
+        public TraversableStack<int> CaretHistory { get; set; }
 
         private string _text;
 
