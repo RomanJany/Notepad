@@ -28,8 +28,8 @@
                 <MenuItem Header="Copy" Command="ApplicationCommands.Copy" />
                 <MenuItem Header="Paste" Command="ApplicationCommands.Paste" />
                 <MenuItem Header="Delete" Command="ApplicationCommands.Delete" />
-                <MenuItem Header="Find" />
-                <MenuItem Header="Replace" />
+                <MenuItem Header="Find" Command="{Binding showFindCommand}" />
+                <MenuItem Header="Replace" Command="{Binding showReplaceCommand}" />
             </MenuItem>
             <MenuItem Header="View">
                 <MenuItem Header="Font" />
@@ -73,6 +73,8 @@
                 <KeyBinding Gesture="CTRL+S" Command="{Binding saveFileCommand}" />
                 <KeyBinding Gesture="CTRL+Z" Command="{Binding undoCommand}" />
                 <KeyBinding Gesture="CTRL+Y" Command="{Binding redoCommand}" />
+                <KeyBinding Gesture="CTRL+F" Command="{Binding showFindCommand}" />
+                <KeyBinding Gesture="CTRL+H" Command="{Binding showReplaceCommand}" />
             </TextBox.InputBindings>
             <TextBox.ContextMenu>
                 <ContextMenu>
