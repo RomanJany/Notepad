@@ -35,6 +35,8 @@ namespace Notepad.ViewModels
             showFindCommand = new ShowFindCommand(this);
             showReplaceCommand = new ShowReplaceCommand(this);
             hideFindAndReplaceCommand = new HideFindAndReplaceCommand(this);
+            findNextCommand = new FindNextCommand(this);
+            findPreviousCommand = new FindPreviousCommand(this);
         }
 
         public string FindText { get; set; }
@@ -274,6 +276,8 @@ namespace Notepad.ViewModels
         public ICommand showFindCommand {  get; }
         public ICommand showReplaceCommand {  get; }
         public ICommand hideFindAndReplaceCommand { get; }
+        public ICommand findNextCommand { get; }
+        public ICommand findPreviousCommand { get; }
 
         void UpdateWindowTitle()
         {
