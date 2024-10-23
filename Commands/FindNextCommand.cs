@@ -70,7 +70,24 @@ namespace Notepad.Commands
 
         private void ReplaceNext()
         {
-            throw new NotImplementedException();
+            if (_mainViewModel.Text.Contains(_mainViewModel.FindText))
+            {
+                FindNext();
+                int caretIndex = _mainViewModel.CaretIndex;
+                string text = _mainViewModel.Text;
+
+                // Remove string which is going to be replaced
+                text = text.Substring(0, caretIndex) 
+                     + text.Substring(caretIndex + _mainViewModel.FindText.Length);
+
+                // Put in the replacement string
+                text = text.Substring(0, caretIndex)
+                       + _mainViewModel.ReplaceText
+                       + text.Substring(caretIndex);
+
+                _mainViewModel.Text = text;
+                _mainViewModel.CaretIndex = caretIndex;
+            }
         }
     }
 }
