@@ -74,7 +74,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Theme:" />
-                    <ComboBox />
+                    <ComboBox ItemsSource="{Binding ThemeCollection}" SelectedItem="{Binding ThemeString}" />
                 </StackPanel>
                 <Button Content="OK" Command="{Binding settingsCloseCommand}" />
             </StackPanel>
