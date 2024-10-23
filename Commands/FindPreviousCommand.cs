@@ -31,7 +31,41 @@ namespace Notepad.Commands
 
         private void FindPrevious()
         {
-            throw new NotImplementedException();
+            if (_mainViewModel.Text.Contains(_mainViewModel.FindText))
+            {
+                int findIndex = _mainViewModel.Text.Length;
+                string text = _mainViewModel.Text;
+                bool found = false;
+
+                // Search for string before CaretIndex
+                while (text.Contains(_mainViewModel.FindText))
+                {
+                    int currentIndex = text.LastIndexOf(_mainViewModel.FindText);
+                    text = text.Substring(0, currentIndex);
+
+                    // Found previous occurence
+                    if (currentIndex < _mainViewModel.CaretIndex)
+                    {
+                        findIndex = currentIndex;
+                        found = true;
+                        break;
+                    }
+                    // Else continue
+                    else
+                    {
+                        findIndex = currentIndex;
+                    }
+                }
+
+                // If the previous occurence wasn't found -> select last occurence
+                if (!found)
+                {
+                    findIndex = _mainViewModel.Text.LastIndexOf(_mainViewModel.FindText);
+                }   
+
+                // Set the new index
+                _mainViewModel.CaretIndex = findIndex;
+            }
         }
 
         private void ReplacePrevious()
