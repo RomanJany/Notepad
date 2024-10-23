@@ -23,6 +23,8 @@ namespace Notepad.ViewModels
 
             FindVisibility = Visibility.Collapsed;
             ReplaceVisibility = Visibility.Collapsed;
+            FindText = "";
+            ReplaceText = "";
 
             newFileCommand = new NewFileCommand(this);
             openFileCommand = new OpenFileCommand(this);
