@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:Notepad" 
         xmlns:views="clr-namespace:Notepad.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        IsEnabled="{Binding SettingsNotOpen}">
     <Grid>
-        <views:MainView />
+        <views:MainView x:Name="mainView" />
     </Grid>
 </Window>

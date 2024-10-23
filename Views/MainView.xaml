@@ -32,7 +32,7 @@
                 <MenuItem Header="Replace" Command="{Binding showReplaceCommand}" InputGestureText="Ctrl+H" />
             </MenuItem>
             <MenuItem Header="View">
-                <MenuItem Header="Font" />
+                <MenuItem Header="Font" Command="{Binding settingsOpenCommand}" />
                 <MenuItem Header="Font size"
                           x:Name="FontSizeMenu"
                           ItemsSource="{Binding FontSizeCollection}">
@@ -44,7 +44,7 @@
                     </ItemsControl.ItemContainerStyle>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Settings" HorizontalAlignment="Right" />
+            <MenuItem Header="Settings" HorizontalAlignment="Right" Command="{Binding settingsOpenCommand}" />
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Background="LightGray">
             <StatusBarItem>
@@ -60,6 +60,12 @@
 
             <StatusBarItem Content="{Binding TextLength}" />
         </StatusBar>
+        <Popup IsOpen="{Binding SettingsOpen}"
+               Width="100"
+               Height="50"
+               PlacementTarget="{Binding ElementName=MainTextBox}"
+               Placement="Center">
+        </Popup>
         <TextBox x:Name="MainTextBox"
                  TextWrapping="Wrap" 
                  AcceptsReturn="True" 

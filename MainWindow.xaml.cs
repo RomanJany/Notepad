@@ -19,6 +19,7 @@ namespace Notepad
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = mainView.DataContext;
         }
     }
 }
