@@ -61,10 +61,23 @@
             <StatusBarItem Content="{Binding TextLength}" />
         </StatusBar>
         <Popup IsOpen="{Binding SettingsOpen}"
-               Width="100"
-               Height="50"
                PlacementTarget="{Binding ElementName=MainTextBox}"
                Placement="Center">
+            <StackPanel Background="LightGray">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Font:" />
+                    <ComboBox ItemsSource="{Binding FontCollection}" SelectedItem="{Binding Font}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Font size:" />
+                    <ComboBox ItemsSource="{Binding FontSizeCollection}" SelectedItem="{Binding SelectedFontSize}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Theme:" />
+                    <ComboBox />
+                </StackPanel>
+                <Button Content="OK" Command="{Binding settingsCloseCommand}" />
+            </StackPanel>
         </Popup>
         <TextBox x:Name="MainTextBox"
                  TextWrapping="Wrap" 
