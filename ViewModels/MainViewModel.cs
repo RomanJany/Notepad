@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,6 +27,8 @@ namespace Notepad.ViewModels
             FindText = "";
             ReplaceText = "";
 
+            SettingsOpen = false;
+
             newFileCommand = new NewFileCommand(this);
             openFileCommand = new OpenFileCommand(this);
             saveFileCommand = new SaveFileCommand(this);
@@ -39,7 +42,24 @@ namespace Notepad.ViewModels
             hideFindAndReplaceCommand = new HideFindAndReplaceCommand(this);
             findNextCommand = new FindNextCommand(this);
             findPreviousCommand = new FindPreviousCommand(this);
+            settingsOpenCommand = new SettingsOpenCommand(this);
         }
+
+        private bool _settingsOpen;
+        public bool SettingsOpen
+        {
+            get
+            {
+                return _settingsOpen;
+            }
+            set
+            {
+                _settingsOpen = value;
+                OnPropertyChanged(nameof(SettingsOpen));
+                OnPropertyChanged(nameof(SettingsNotOpen));
+            }
+        }
+        public bool SettingsNotOpen => !SettingsOpen;
 
         public string FindText { get; set; }
         public string ReplaceText { get; set; }
@@ -280,6 +300,7 @@ namespace Notepad.ViewModels
         public ICommand hideFindAndReplaceCommand { get; }
         public ICommand findNextCommand { get; }
         public ICommand findPreviousCommand { get; }
+        public ICommand settingsOpenCommand { get; }
 
         void UpdateWindowTitle()
         {
