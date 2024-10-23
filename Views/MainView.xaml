@@ -44,9 +44,7 @@
                     </ItemsControl.ItemContainerStyle>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Settings" HorizontalAlignment="Right">
-
-            </MenuItem>
+            <MenuItem Header="Settings" HorizontalAlignment="Right" />
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Background="LightGray">
             <StatusBarItem>
