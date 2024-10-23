@@ -224,7 +224,6 @@ namespace Notepad.ViewModels
             set
             {
                 setFontSizeCommand.Execute(value);
-                OnPropertyChanged(nameof(SelectedFontSize));
             }
         }
         public double FontSize
@@ -237,6 +236,7 @@ namespace Notepad.ViewModels
             {
                 notepadSettings.FontSize = value;
                 OnPropertyChanged(nameof(FontSize));
+                OnPropertyChanged(nameof(SelectedFontSize));
             }
         }
 
