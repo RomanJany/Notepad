@@ -240,6 +240,14 @@ namespace Notepad.ViewModels
             }
         }
 
+        private ObservableCollection<FontFamily> _fontCollection = new ObservableCollection<FontFamily>(Fonts.SystemFontFamilies);
+        public ObservableCollection<FontFamily> FontCollection
+        {
+            get
+            {
+                return _fontCollection;
+            }
+        }
         public FontFamily Font
         {
             get
