@@ -215,6 +215,18 @@ namespace Notepad.ViewModels
             }
         }
 
+        public double SelectedFontSize
+        {
+            get
+            {
+                return FontSize;
+            }
+            set
+            {
+                setFontSizeCommand.Execute(value);
+                OnPropertyChanged(nameof(SelectedFontSize));
+            }
+        }
         public double FontSize
         {
             get
