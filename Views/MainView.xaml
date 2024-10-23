@@ -69,7 +69,9 @@
                  FontFamily="{Binding Font}"
                  Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
                  ap:TextBoxProperties.CaretIndex="{Binding CaretIndex}"
-                 Loaded="TextBox_Loaded">
+                 Loaded="TextBox_Loaded"
+                 LostFocus="TextBox_LostFocus"
+                 IsInactiveSelectionHighlightEnabled="true">
             <TextBox.InputBindings>
                 <KeyBinding Gesture="CTRL+S" Command="{Binding saveFileCommand}" />
                 <KeyBinding Gesture="CTRL+Z" Command="{Binding undoCommand}" />

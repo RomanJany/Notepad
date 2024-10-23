@@ -33,5 +33,10 @@ namespace Notepad.Views
         {
             ((TextBox)sender).TextChanged += TextBoxProperties.UpdateCaretIndexFromTextBox;
         }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
