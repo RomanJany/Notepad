@@ -75,6 +75,10 @@
                 <KeyBinding Gesture="CTRL+Y" Command="{Binding redoCommand}" />
                 <KeyBinding Gesture="CTRL+F" Command="{Binding showFindCommand}" />
                 <KeyBinding Gesture="CTRL+H" Command="{Binding showReplaceCommand}" />
+                <KeyBinding Gesture="CTRL+N" Command="{Binding newFileCommand}" />
+                <KeyBinding Gesture="CTRL+O" Command="{Binding openFileCommand}" />
+                <KeyBinding Gesture="CTRL+SHIFT+S" Command="{Binding saveAsFileCommand}" />
+                <KeyBinding Gesture="CTRL+P" Command="{Binding printCommand}" />
             </TextBox.InputBindings>
             <TextBox.ContextMenu>
                 <ContextMenu>
