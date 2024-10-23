@@ -201,7 +201,44 @@ namespace Notepad.ViewModels
             }
         }
 
-
+        private ObservableCollection<string> _themeCollection = ["Light", "Dark"];
+        public ObservableCollection<string> ThemeCollection
+        {
+            get
+            {
+                return _themeCollection;
+            }
+        }
+        public string ThemeString
+        {
+            get
+            {
+                switch (Theme)
+                {
+                    case NotepadSettings.NotepadTheme.Light:
+                        return "Light";
+                    case NotepadSettings.NotepadTheme.Dark:
+                        return "Dark";
+                    default:
+                        return "Light";
+                }
+            }
+            set
+            {
+                switch (value)
+                {
+                    case "Light":
+                        Theme = NotepadSettings.NotepadTheme.Light;
+                        break;
+                    case "Dark":
+                        Theme = NotepadSettings.NotepadTheme.Dark;
+                        break;
+                    default:
+                        Theme = NotepadSettings.NotepadTheme.Light;
+                        break;
+                }
+            }
+        }
         public NotepadSettings.NotepadTheme Theme
         {
             get
