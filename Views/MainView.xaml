@@ -54,15 +54,16 @@
                     <Button Width="25" Content="✖" Margin="0,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding hideFindAndReplaceCommand}" />
                     <TextBox Width="100" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" Text="{Binding FindText}" />
                     <TextBox Width="100" Margin="3,0,0,0" Visibility="{Binding ReplaceVisibility}" Text="{Binding ReplaceText}" />
-                    <Button Width="25" Content="▼" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding findNextCommand}" />
-                    <Button Width="25" Content="▲" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding findPreviousCommand}" />
+                    <Button Width="25" Content="▼" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding findNextCommand}" Click="Button_Click" />
+                    <Button Width="25" Content="▲" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding findPreviousCommand}" Click="Button_Click" />
                 </StackPanel>
             </StatusBarItem>
             <Separator Visibility="{Binding FindVisibility}" />
 
             <StatusBarItem Content="{Binding TextLength}" />
         </StatusBar>
-        <TextBox TextWrapping="Wrap" 
+        <TextBox x:Name="MainTextBox"
+                 TextWrapping="Wrap" 
                  AcceptsReturn="True" 
                  VerticalScrollBarVisibility="Auto"
                  FontSize="{Binding FontSize}"
@@ -70,7 +71,6 @@
                  Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
                  ap:TextBoxProperties.CaretIndex="{Binding CaretIndex}"
                  Loaded="TextBox_Loaded"
-                 LostFocus="TextBox_LostFocus"
                  IsInactiveSelectionHighlightEnabled="true">
             <TextBox.InputBindings>
                 <KeyBinding Gesture="CTRL+S" Command="{Binding saveFileCommand}" />
