@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Orientation="Horizontal">
-        <Button Width="25" Content="✖" Margin="0,0,0,0" />
+        <Button Width="25" Content="✖" Margin="0,0,0,0" Command="{Binding hideFindAndReplaceCommand}" />
         <TextBox Width="100" Margin="3,0,0,0" />
         <TextBox Width="100" Margin="3,0,0,0" />
         <Button Width="25" Content="▼" Margin="3,0,0,0" />
