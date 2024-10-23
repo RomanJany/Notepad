@@ -54,8 +54,8 @@
                     <Button Width="25" Content="✖" Margin="0,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding hideFindAndReplaceCommand}" />
                     <TextBox Width="100" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" Text="{Binding FindText}" />
                     <TextBox Width="100" Margin="3,0,0,0" Visibility="{Binding ReplaceVisibility}" Text="{Binding ReplaceText}" />
-                    <Button Width="25" Content="▼" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" />
-                    <Button Width="25" Content="▲" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" />
+                    <Button Width="25" Content="▼" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding findNextCommand}" />
+                    <Button Width="25" Content="▲" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding findPreviousCommand}" />
                 </StackPanel>
             </StatusBarItem>
             <Separator Visibility="{Binding FindVisibility}" />
