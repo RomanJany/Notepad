@@ -49,15 +49,16 @@
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Background="LightGray">
-            <StatusBarItem Visibility="{Binding FindVisibility}">
-                <local:FindView />
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="25" Content="✖" Margin="0,0,0,0" Visibility="{Binding FindVisibility}" Command="{Binding hideFindAndReplaceCommand}" />
+                    <TextBox Width="100" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" />
+                    <TextBox Width="100" Margin="3,0,0,0" Visibility="{Binding ReplaceVisibility}" />
+                    <Button Width="25" Content="▼" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" />
+                    <Button Width="25" Content="▲" Margin="3,0,0,0" Visibility="{Binding FindVisibility}" />
+                </StackPanel>
             </StatusBarItem>
             <Separator Visibility="{Binding FindVisibility}" />
-
-            <StatusBarItem Visibility="{Binding ReplaceVisibility}">
-                <local:ReplaceView />
-            </StatusBarItem>
-            <Separator Visibility="{Binding ReplaceVisibility}" />
 
             <StatusBarItem Content="{Binding TextLength}" />
         </StatusBar>
