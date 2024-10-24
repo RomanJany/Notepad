@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Notepad.Commands;
+using Notepad.ViewModels;
+using System.ComponentModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,6 +23,12 @@ namespace Notepad
         {
             InitializeComponent();
             this.DataContext = mainView.DataContext;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            ((MainViewModel)this.DataContext).exitCommand.Execute(null);
         }
     }
 }
