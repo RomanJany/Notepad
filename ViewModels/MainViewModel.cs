@@ -65,7 +65,7 @@ namespace Notepad.ViewModels
                 OnPropertyChanged(nameof(SettingsNotOpen));
             }
         }
-        public bool SettingsNotOpen => !SettingsOpen;
+        public bool SettingsNotOpen => !(SettingsOpen || ConfirmExitPopup);
 
         public string FindText { get; set; }
         public string ReplaceText { get; set; }
@@ -364,6 +364,7 @@ namespace Notepad.ViewModels
             {
                 _confirmExitPopup = value;
                 OnPropertyChanged(nameof(ConfirmExitPopup));
+                OnPropertyChanged(nameof(SettingsNotOpen));
             }
         }
 
