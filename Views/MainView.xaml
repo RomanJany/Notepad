@@ -79,6 +79,18 @@
                 <Button Content="OK" Command="{Binding settingsCloseCommand}" />
             </StackPanel>
         </Popup>
+        <Popup IsOpen="{Binding ConfirmExitPopup}"
+               PlacementTarget="{Binding ElementName=MainTextBox}"
+               Placement="Center">
+            <StackPanel Background="LightGray">
+                <Label Content="Do you want to save changes?" />
+                <Grid>
+                    <Button Content="Save" Command="{Binding saveOnExitCommand}" HorizontalAlignment="Left" Width="40" />
+                    <Button Content="Don't save" Command="{Binding exitWithoutSavingCommand}" HorizontalAlignment="Center" />
+                    <Button Content="Cancel" Command="{Binding cancelExitCommand}" HorizontalAlignment="Right" Width="40" />
+                </Grid>
+            </StackPanel>
+        </Popup>
         <TextBox x:Name="MainTextBox"
                  TextWrapping="Wrap" 
                  AcceptsReturn="True" 
