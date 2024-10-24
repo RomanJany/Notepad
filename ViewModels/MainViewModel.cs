@@ -44,6 +44,7 @@ namespace Notepad.ViewModels
             findPreviousCommand = new FindPreviousCommand(this);
             settingsOpenCommand = new SettingsOpenCommand(this);
             settingsCloseCommand = new SettingsCloseCommand(this);
+            exitCommand = new ExitCommand(this);
         }
 
         private bool _settingsOpen;
@@ -360,6 +361,7 @@ namespace Notepad.ViewModels
         public ICommand findPreviousCommand { get; }
         public ICommand settingsOpenCommand { get; }
         public ICommand settingsCloseCommand { get; }
+        public ICommand exitCommand { get; }
 
         void UpdateWindowTitle()
         {
