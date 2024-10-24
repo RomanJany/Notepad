@@ -346,6 +346,24 @@ namespace Notepad.ViewModels
             }
         }
 
+        private bool _confirmExitPopup = false;
+        public bool ConfirmExitPopup
+        {
+            get
+            {
+                return _confirmExitPopup;
+            }
+            set
+            {
+                _confirmExitPopup = value;
+                OnPropertyChanged(nameof(ConfirmExitPopup));
+            }
+        }
+        public void ConfirmExit()
+        {
+            ConfirmExitPopup = true;
+        }
+
         public ICommand newFileCommand { get; }
         public ICommand openFileCommand { get; }
         public ICommand saveFileCommand { get; }
