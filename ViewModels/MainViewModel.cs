@@ -28,6 +28,7 @@ namespace Notepad.ViewModels
             ReplaceText = "";
 
             SettingsOpen = false;
+            Theme = Theme; // Trigger theme update
 
             newFileCommand = new NewFileCommand(this);
             openFileCommand = new OpenFileCommand(this);
@@ -253,6 +254,9 @@ namespace Notepad.ViewModels
             {
                 notepadSettings.Theme = value;
                 OnPropertyChanged(nameof(Theme));
+
+                Application.Current.Resources.MergedDictionaries.RemoveAt(0);
+                Application.Current.Resources.MergedDictionaries.Add((ResourceDictionary)Application.LoadComponent(new Uri("/Themes/" + ThemeString + "Theme.xaml", UriKind.Relative)));
             }
         }
 
