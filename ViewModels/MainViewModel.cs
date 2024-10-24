@@ -359,10 +359,6 @@ namespace Notepad.ViewModels
                 OnPropertyChanged(nameof(ConfirmExitPopup));
             }
         }
-        public void ConfirmExit()
-        {
-            ConfirmExitPopup = true;
-        }
 
         public ICommand newFileCommand { get; }
         public ICommand openFileCommand { get; }

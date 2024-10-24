@@ -20,7 +20,7 @@ namespace Notepad.Commands
         {
             if (!_mainViewModel.FileSaved)
             {
-                _mainViewModel.ConfirmExit();
+                _mainViewModel.ConfirmExitPopup = true;
             }
             else
             {
