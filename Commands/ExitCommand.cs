@@ -18,7 +18,14 @@ namespace Notepad.Commands
 
         public override void Execute(object? parameter)
         {
-            Application.Current.Shutdown();
+            if (!_mainViewModel.FileSaved)
+            {
+                _mainViewModel.ConfirmExit();
+            }
+            else
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }
