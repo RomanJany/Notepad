@@ -46,7 +46,6 @@ namespace Notepad.ViewModels
             settingsOpenCommand = new SettingsOpenCommand(this);
             settingsCloseCommand = new SettingsCloseCommand(this);
             exitCommand = new ExitCommand(this);
-            cancelExitCommand = new CancelExitCommand(this);
             exitWithoutSavingCommand = new ExitWithoutSavingCommand(this);
             saveOnExitCommand = new SaveOnExitCommand(this);
         }
@@ -384,7 +383,6 @@ namespace Notepad.ViewModels
         public ICommand settingsOpenCommand { get; }
         public ICommand settingsCloseCommand { get; }
         public ICommand exitCommand { get; }
-        public ICommand cancelExitCommand { get; }
         public ICommand exitWithoutSavingCommand { get; }
         public ICommand saveOnExitCommand { get; }
 
