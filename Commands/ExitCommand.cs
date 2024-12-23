@@ -20,7 +20,29 @@ namespace Notepad.Commands
         {
             if (!_mainViewModel.FileSaved)
             {
-                _mainViewModel.ConfirmExitPopup = true;
+                MessageBoxResult result = MessageBox.Show("Save changes?",
+                                                          "Unsaved changes",
+                                                          MessageBoxButton.YesNoCancel,
+                                                          MessageBoxImage.None,
+                                                          MessageBoxResult.Cancel);
+
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        _mainViewModel.saveFileCommand.Execute(null);
+                        if (_mainViewModel.FileSaved)
+                        {
+                            Application.Current.Shutdown();
+                        }
+                        break;
+
+                    case MessageBoxResult.No:
+                        Application.Current.Shutdown();
+                        break;
+
+                    case MessageBoxResult.Cancel:
+                        break;
+                }
             }
             else
             {
