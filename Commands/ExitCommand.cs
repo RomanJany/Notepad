@@ -11,14 +11,20 @@ namespace Notepad.Commands
     public class ExitCommand : BaseCommand
     {
         private MainViewModel _mainViewModel;
+        private bool exiting;
         public ExitCommand(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
+            exiting = false;
         }
 
         public override void Execute(object? parameter)
         {
-            if (!_mainViewModel.FileSaved)
+            if (_mainViewModel.FileSaved || exiting)
+            {
+                Application.Current.Shutdown();
+            }
+            else
             {
                 MessageBoxResult result = MessageBox.Show("Save changes?",
                                                           "Unsaved changes",
@@ -37,17 +43,14 @@ namespace Notepad.Commands
                         break;
 
                     case MessageBoxResult.No:
+                        exiting = true;
                         Application.Current.Shutdown();
                         break;
 
                     case MessageBoxResult.Cancel:
                         break;
                 }
-            }
-            else
-            {
-                Application.Current.Shutdown();
-            }
+            }            
         }
     }
 }
